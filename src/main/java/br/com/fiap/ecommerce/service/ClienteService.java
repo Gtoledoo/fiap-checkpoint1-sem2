@@ -19,27 +19,7 @@ public class ClienteService {
         return clienteRepository.findAll();
     }
 
-    public Cliente save(Cliente cliente) {
-        String cep = cliente.getCep();
-
-        Map<String, String> bairrosPorCep = Map.of(
-                "0", "Campo Limpo",
-                "1", "Capão Redondo",
-                "2", "Jardim Lidia",
-                "3", "Paraisópolis",
-                "4", "Marconi",
-                "5", "Helipe",
-                "6", "Jardim Piracuama",
-                "7", "Ipiranga",
-                "8", "Ibirapuera",
-                "9", "Paulista"
-        );
-
-        String ultimoDigito = cep.substring(cep.length() - 1);
-        cliente.setBairro(bairrosPorCep.getOrDefault(ultimoDigito, "Centro"));
-
-        return clienteRepository.save(cliente);
-    }
+    public Cliente save(Cliente cliente) {return clienteRepository.save(cliente);}
 
     public Cliente update(ClienteRequestUpdateDto request, Long id) {
         Optional<Cliente> cliente = clienteRepository.findById(id);
