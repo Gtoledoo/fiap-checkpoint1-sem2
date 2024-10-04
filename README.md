@@ -1,3 +1,10 @@
+## Integrantes:
+
+```
+Matheus Perestrelo - RM 93260
+Gabriel Oliveria Toledo - RM 93152 
+```
+
 # E-commerce
 
 ## Database
